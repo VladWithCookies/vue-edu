@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Vue education",
   "dependencies": {
+    "semantic-ui-vue2": "^2.4.2",
     "vue": "^2.4.4"
   },
   "scripts": {
