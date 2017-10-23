@@ -24,16 +24,19 @@ export default {
   data: () => ({
     newArticle: {
       title: '',
-      content: ''
+      content: '',
+      imageSrc: ''
     },
     articles: [
       {
         title: 'Article title',
-        content: 'Article content'
+        content: 'Article content',
+        imageSrc: 'https://picsum.photos/600/300'
       },
       {
         title: 'Another article title',
-        content: 'Another article content'
+        content: 'Another article content',
+        imageSrc: 'https://picsum.photos/600/301'
       }
     ]
   }),
@@ -46,15 +49,16 @@ export default {
       this.articles.push(newArticle)
       this.newArticle = {
         title: '',
-        content: ''
+        content: '',
+        imageSrc: ''
       }
-    }
+    },
   }
 }
 </script>
 
 <style>
-button, input, textarea {
+button, input, textarea, label {
   border-radius: 0 !important;
 }
 .mb-20 {
