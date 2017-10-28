@@ -1,9 +1,23 @@
 <template>
   <div class='article-layout'>
-    <h2>Header</h2>
+    <navbar />
     <slot />
+    <main-footer />
   </div>
 </template>
+
+<script>
+import Navbar from './Navbar'
+import MainFooter from './MainFooter'
+
+export default {
+  name: 'article-layout',
+  components: {
+    Navbar,
+    MainFooter,
+  }
+}
+</script>
 
 <style>
 .article-layout {

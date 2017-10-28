@@ -8,6 +8,7 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -23,7 +24,10 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    }
+      'vue$': 'vue/dist/vue.esm.js',
+      components: path.resolve(__dirname, 'src/components'),
+      features: path.resolve(__dirname, 'src/features')
+    },
+    extensions: ['.js', '.vue']
   }
 }

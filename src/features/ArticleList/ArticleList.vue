@@ -1,20 +1,27 @@
 <template>
-  <div>
+  <article-layout>
     <article-card
       :key='article.id'
       :article='article'
       v-for='article in articles'
     />
-  </div>
+  </article-layout>
 </template>
 
 <script>
-import ArticleCard from './ArticleCard.vue'
+import { mapMutations } from 'vuex'
+import ArticleLayout from 'components/ArticleLayout'
+import ArticleCard from './ArticleCard'
 
 export default {
   components: {
+    ArticleLayout,
     ArticleCard,
   },
-  props: ['articles'],
+  computed: {
+    articles () {
+      return this.$store.state.articles
+    }
+  }
 }
 </script>

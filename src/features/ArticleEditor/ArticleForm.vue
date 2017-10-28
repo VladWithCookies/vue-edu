@@ -1,5 +1,5 @@
 <template>
-  <div class='mb-60'>
+  <article-layout class='mb-60'>
     <div class='ui form'>
       <div class='ui fluid image'>
         <img :src='newArticle.imageSrc' />
@@ -19,11 +19,11 @@
       </div>
 
       <div class='field'>
-        <input v-model='newArticle.title' />
+        <input v-model.trim='newArticle.title' />
       </div>
 
       <div class='field'>
-        <textarea v-model='newArticle.content' rows='4' />
+        <textarea v-model.trim='newArticle.content' rows='15' />
       </div>
 
       <button @click='createArticle' class='ui inverted purple button'>
@@ -31,23 +31,39 @@
       </button>
       <button class='ui secondary button'>Cancel</button>
     </div>
-  </div>
+  </article-layout>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+import ArticleLayout from 'components/ArticleLayout'
+
 export default {
-  props: ['newArticle', 'createArticle'],
+  components: {
+    ArticleLayout,
+  },
+  computed: {
+    newArticle () {
+      return this.$store.state.newArticle
+    }
+  },
   methods: {
+    ...mapMutations([
+      'createArticle',
+    ]),
+    createArticle () {
+      const newArticle = this.newArticle
+
+      if (!newArticle.content || !newArticle.title) return
+
+      this.$store.commit('createArticle', newArticle)
+      this.$router.push('/')
+    },
     uploadImage (e) {
       const files = e.target.files
+      let reader = new FileReader()
 
       if(!files[0]) return
-
-      const data = new FormData()
-
-      data.append('media', files[0])
-
-      const reader = new FileReader()
 
       reader.onload = (e) => {
         this.newArticle.imageSrc = e.target.result
