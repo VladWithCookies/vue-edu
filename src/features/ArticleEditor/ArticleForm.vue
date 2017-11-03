@@ -11,15 +11,14 @@
         </label>
         <input
           @change='uploadImage'
-          style='display:none'
-          accept="image/*"
+          style='display: none'
+          accept='image/*'
           type='file'
-          id='file'
         />
       </div>
 
       <div class='field'>
-        <input v-model.trim='newArticle.title' />
+        <input placeholder='Title' v-model.trim='newArticle.title' />
       </div>
 
       <div class='field'>

@@ -2,9 +2,9 @@
   <div class='ui fluid card'>
     <div class='content'>
       <div class='author'>
-        <div class="right floated meta">14h</div>
+        <div class="right floated meta">{{article.date}}</div>
         <img class='avatar' src='https://picsum.photos/200' />
-        <span class='ml-10 meta'>Name Lastname</span>
+        <span class='ml-10 meta'>{{article.author}}</span>
       </div>
     </div>
     <router-link :to="{ name: 'articles', params: { id: article.id } }" class='fluid image'>

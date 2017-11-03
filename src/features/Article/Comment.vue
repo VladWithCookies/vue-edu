@@ -4,13 +4,17 @@
       <img src='https://picsum.photos/200'>
     </a>
     <div class='content'>
-      <a class='author'>Matt</a>
+      <a class='author'>{{comment.author}}</a>
       <div class='metadata'>
-        <span class='date'>Today at 5:42PM</span>
+        <span class='date'>{{comment.date}}</span>
       </div>
-      <div class='text'>
-        Wow!
-      </div>
+      <div class='text'>{{comment.content}}</div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ['comment'],
+}
+</script>
