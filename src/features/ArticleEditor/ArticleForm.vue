@@ -46,6 +46,9 @@ export default {
   computed: {
     newArticle () {
       return this.$store.state.newArticle
+    },
+    articleId () {
+      return this.$store.state.articles.length + 1
     }
   },
   methods: {
@@ -57,7 +60,11 @@ export default {
 
       if (!newArticle.content || !newArticle.title) return
 
-      this.$store.commit('createArticle', { ...newArticle, date: moment() })
+      this.$store.commit('createArticle', {
+        ...newArticle,
+        date: moment(),
+        id: this.articleId,
+      })
       this.$router.push('/')
     },
     uploadImage (e) {

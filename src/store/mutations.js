@@ -1,15 +1,14 @@
 export const state = {
   newArticle: {
-    id: 3,
     title: '',
-    author: 'Vlad',
+    author: 'Author Name',
     content: '',
     imageSrc: '',
     comments: [],
   },
   newComment: {
     content: '',
-    author: 'Art',
+    author: 'Author Name',
   },
   articles:  []
 }
@@ -17,19 +16,18 @@ export const state = {
 export const mutations = {
   createArticle(state, payload) {
     state.newArticle = {
-      id: 3,
       date: '',
       title: '',
-      author: 'Vlad',
+      author: 'Author Name',
       content: '',
       imageSrc: '',
       comments: [],
     }
     state.articles.push(payload)
+    console.log(payload)
   },
   createComment(state, { articleId, newComment }) {
     state.newComment = {
-      id: 3,
       content: '',
       author: 'Art',
     },

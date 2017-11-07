@@ -31,11 +31,14 @@ import ArticleLayout from 'components/ArticleLayout'
 import CommentForm from './CommentForm'
 import Statistic from './Statistic'
 import Comment from './Comment'
+import { find } from 'lodash'
 
 export default {
   computed: {
     article () {
-      return this.$store.state.articles[this.$route.params.id - 1] //FIXME: temp slution
+      return find(this.$store.state.articles, ({ id }) =>
+        id === this.$route.params.id
+      ) //FIXME: temp slution
     }
   },
   components: {

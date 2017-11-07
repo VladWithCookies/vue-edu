@@ -2,7 +2,7 @@
   <div class='ui fluid card'>
     <div class='content'>
       <div class='author'>
-        <div class="right floated meta">{{timestamp}}</div>
+        <div class="right floated meta">{{timeSinceCreation}}</div>
         <img class='avatar' src='https://picsum.photos/200' />
         <span class='ml-10 meta'>{{article.author}}</span>
       </div>
@@ -35,7 +35,7 @@
   export default {
     props: ['article'],
     computed: {
-      timestamp () {
+      timeSinceCreation () {
         return moment(this.article.date).fromNow()
       }
     }
