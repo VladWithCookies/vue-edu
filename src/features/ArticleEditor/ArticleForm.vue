@@ -14,6 +14,7 @@
           style='display: none'
           accept='image/*'
           type='file'
+          id='file'
         />
       </div>
 
@@ -34,6 +35,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import { mapMutations } from 'vuex'
 import ArticleLayout from 'components/ArticleLayout'
 
@@ -55,7 +57,7 @@ export default {
 
       if (!newArticle.content || !newArticle.title) return
 
-      this.$store.commit('createArticle', newArticle)
+      this.$store.commit('createArticle', { ...newArticle, date: moment() })
       this.$router.push('/')
     },
     uploadImage (e) {

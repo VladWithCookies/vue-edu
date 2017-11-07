@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "Vue education",
   "dependencies": {
+    "lodash": "^4.17.4",
+    "moment": "^2.19.1",
     "semantic-ui-vue2": "^2.4.2",
     "vue": "^2.4.4",
     "vue-router": "^3.0.1",
