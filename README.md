@@ -12,16 +12,41 @@
 Both React and Vue uses Virtual DOM. This means that both Vue and React creates a lightweight tree from JavaScript objects that is lightweight copy of DOM tree. Such approach allow us to increase speed, because it doesn’t require all the heavyweight parts that go into a real DOM. It is worth noting that Vue implementation of Virtual DOM is more lighter-weight. That's why Vue has better performance.
 
 ### 2. Render functions & JSX support
-All React components uses render function with JSX. JSX is a XML-like syntax that works within JavaScript. Render function is useful because with render function we can use full power of JavaScript to build our views. Vue also has render functions and JSX support. In addition, Vue provides an alternative HTML-template syntax. In Vue any valid HTML can be a template. This Vue feature simplify existing application migration, decrease learning time cost, becouse your dont need to learn some new DSL and even allow us to use pre-processors such as HAML, Pug and others. It is good idea to use render functions and JSX in logical components and use template syntax in presentational.
+All React components uses render function with JSX. JSX is a XML-like syntax that works within JavaScript. Render function is useful because with render function we can use full power of JavaScript to build our views. Vue also has render functions and JSX support. In addition, Vue provides an alternative HTML-template syntax. In Vue any valid HTML can be a template. This Vue feature simplify existing application migration, decrease learning time cost, becouse your dont need to learn some new DSL and even allow us to use pre-processors such as HAML, Pug and others. It is good idea to use render functions and JSX in logical components and use template syntax in presentational. For JSX support Vue requires babel-plugin-transform-vue-jsx.
 
 In Vue:
 ```js
-//TODO:
+import Vue from 'vue'
+
+new Vue({
+  el: '#demo',
+  methods: {
+    sayHi () {
+      alert('Hi.')
+    }
+  },
+  render (h) => {
+    return (
+      <span on-click={this.sayHi}>Say hi!</span>
+    )
+  }
+})
 ```
 
 In React
 ```js
-//TODO:
+import React from 'react'
+
+const Demo = () => {
+  const sayHi = () =>
+    alert('Hi.')
+
+  return (
+    <span onClick={sayHi}>Say hi!</span>
+  )
+}
+  
+export default Demo
 ```
 
 ### 3. Focus on view layer
