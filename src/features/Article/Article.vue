@@ -1,7 +1,7 @@
 <template>
   <article-layout>
     <div class='ui'>
-      <div class='ui fluid bordered image'>
+      <div class='ui fluid image'>
         <img :src='article.imageSrc' />
       </div>
       <div class='ui divider' />
@@ -27,20 +27,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import ArticleLayout from 'components/ArticleLayout'
 import CommentForm from './CommentForm'
 import Statistic from './Statistic'
 import Comment from './Comment'
-import { find } from 'lodash'
 
 export default {
-  computed: {
-    article () {
-      return find(this.$store.state.articles, ({ id }) =>
-        id === this.$route.params.id
-      ) //FIXME: temp slution
-    }
-  },
+  computed: mapGetters(['article']),
   components: {
     ArticleLayout,
     CommentForm,

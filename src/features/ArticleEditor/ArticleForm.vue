@@ -36,35 +36,22 @@
 
 <script>
 import moment from 'moment'
-import { mapMutations } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import ArticleLayout from 'components/ArticleLayout'
 
 export default {
   components: {
     ArticleLayout,
   },
-  computed: {
-    newArticle () {
-      return this.$store.state.newArticle
-    },
-    articleId () {
-      return this.$store.state.articles.length + 1
-    }
-  },
+  computed: mapGetters(['newArticle']),
   methods: {
-    ...mapMutations([
-      'createArticle',
-    ]),
+    ...mapActions(['createArticle']),
     createArticle () {
       const newArticle = this.newArticle
 
       if (!newArticle.content || !newArticle.title) return
 
-      this.$store.commit('createArticle', {
-        ...newArticle,
-        date: moment(),
-        id: this.articleId,
-      })
+      this.$store.dispatch('createArticle')
       this.$router.push('/')
     },
     uploadImage (e) {

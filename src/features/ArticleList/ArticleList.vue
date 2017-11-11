@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapGetters } from 'vuex'
 import ArticleLayout from 'components/ArticleLayout'
 import ArticleCard from './ArticleCard'
 
@@ -18,10 +18,6 @@ export default {
     ArticleLayout,
     ArticleCard,
   },
-  computed: {
-    articles () {
-      return this.$store.state.articles
-    }
-  }
+  computed: mapGetters(['articles'])
 }
 </script>
