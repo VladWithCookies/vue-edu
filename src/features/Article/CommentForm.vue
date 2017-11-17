@@ -15,28 +15,18 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  computed: {
-    newComment () {
-      return this.$store.state.newComment
-    },
-    articleId () {
-      return this.$route.params.id - 1 //FIXME: temp slution
-    }
-  },
+  computed: mapGetters(['newComment']),
   methods: {
-    ...mapMutations([
-      'createComment',
-    ]),
+    ...mapActions(['createComment']),
     createComment () {
       const newComment = this.newComment
-      const articleId = this.articleId
 
       if (!newComment.content) return
 
-      this.$store.commit('createComment', { articleId, newComment })
+      this.$store.dispatch('createComment')
     }
   }
 }

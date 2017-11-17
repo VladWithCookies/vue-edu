@@ -1,20 +1,8 @@
-export const state = {
-  newArticle: {
-    title: '',
-    author: 'Author Name',
-    content: '',
-    imageSrc: '',
-    comments: [],
-  },
-  newComment: {
-    content: '',
-    author: 'Author Name',
-  },
-  articles:  []
-}
+import state from './state'
+import moment from 'moment'
 
-export const mutations = {
-  createArticle(state, payload) {
+export default {
+  createArticle(state, newArticle) {
     state.newArticle = {
       date: '',
       title: '',
@@ -23,14 +11,17 @@ export const mutations = {
       imageSrc: '',
       comments: [],
     }
-    state.articles.push(payload)
-    console.log(payload)
+    state.articles.push({
+      ...newArticle,
+      date: moment(),
+      id: state.articles.length + 1,
+    })
   },
-  createComment(state, { articleId, newComment }) {
+  createComment (state, { newComment, article }) {
     state.newComment = {
       content: '',
-      author: 'Art',
-    },
-    state.articles[articleId].comments.push(newComment) //FIXME: temp slution
+      author: 'Author Name',
+    }
+    article.comments.push(newComment) //FIXME: temp solution
   }
 }
