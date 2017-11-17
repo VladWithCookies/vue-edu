@@ -6,7 +6,7 @@
     <div class='content'>
       <a class='author'>{{comment.author}}</a>
       <div class='metadata'>
-        <span class='date'>{{comment.date}}</span>
+        <span class='date'>{{timeSinceCreation}}</span>
       </div>
       <div class='text'>{{comment.content}}</div>
     </div>
@@ -14,7 +14,14 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   props: ['comment'],
+  computed: {
+    timeSinceCreation () {
+      return moment(this.comment.date).fromNow()
+    }
+  }
 }
 </script>

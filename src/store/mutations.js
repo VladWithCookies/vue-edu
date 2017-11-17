@@ -22,6 +22,6 @@ export default {
       content: '',
       author: 'Author Name',
     }
-    article.comments.push(newComment) //FIXME: temp solution
+    article.comments.push({ ...newComment, date: moment() }) //FIXME: temp solution
   }
 }
