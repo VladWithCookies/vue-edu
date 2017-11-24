@@ -26,4 +26,7 @@ export default {
 .ml-10 {
   margin-left: 10px;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 </style>
