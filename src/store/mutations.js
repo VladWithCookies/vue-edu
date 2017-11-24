@@ -14,7 +14,7 @@ export default {
     state.articles.push({
       ...newArticle,
       date: moment(),
-      id: state.articles.length + 1,
+      id: `${state.articles.length + 1}`,
     })
   },
   createComment (state, { newComment, article }) {
@@ -23,5 +23,9 @@ export default {
       author: 'Author Name',
     }
     article.comments.push({ ...newComment, date: moment() }) //FIXME: temp solution
+  },
+  deleteArticle (state, article) {
+    const index = state.articles.indexOf(article)
+    state.articles.splice(index, 1)
   }
 }
