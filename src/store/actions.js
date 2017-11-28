@@ -5,5 +5,8 @@ export default {
   createComment ({ commit, getters }) {
     const { newComment, article } = getters
     commit('createComment', { newComment, article })
+  },
+  resetNewArticle ({ commit }) {
+    commit('resetNewArticle')
   }
 }
