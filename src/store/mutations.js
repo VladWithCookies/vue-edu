@@ -14,7 +14,7 @@ export default {
     state.articles.push({
       ...newArticle,
       date: moment(),
-      id: state.articles.length + 1,
+      id: `${state.articles.length + 1}`,
     })
   },
   createComment (state, { newComment, article }) {
@@ -33,5 +33,9 @@ export default {
       imageSrc: '',
       comments: [],
     }
+  },
+  deleteArticle (state, article) {
+    const index = state.articles.indexOf(article)
+    state.articles.splice(index, 1)
   }
 }

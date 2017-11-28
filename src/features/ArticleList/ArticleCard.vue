@@ -25,6 +25,9 @@
         <i class='comment icon'></i>
         42
       </span>
+      <span @click='deleteArticle(article)' class='right floated cursor-pointer'>
+        <i class='trash icon'></i>
+      </span>
     </div>
   </div>
 </template>
@@ -33,7 +36,7 @@
   import moment from 'moment'
 
   export default {
-    props: ['article'],
+    props: ['article', 'deleteArticle'],
     computed: {
       timeSinceCreation () {
         return moment(this.article.date).fromNow()
