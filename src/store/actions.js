@@ -6,6 +6,9 @@ export default {
     const { newComment, article } = getters
     commit('createComment', { newComment, article })
   },
+  resetNewArticle ({ commit }) {
+    commit('resetNewArticle')
+  },
   deleteArticle ({ commit }, article) {
     commit('deleteArticle', article)
   }

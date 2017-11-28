@@ -29,7 +29,7 @@
       <button @click='createArticle' class='ui inverted purple button'>
         Submit
       </button>
-      <button class='ui secondary button'>Cancel</button>
+      <button @click='resetNewArticle' class='ui secondary button'>Cancel</button>
     </div>
   </article-layout>
 </template>
@@ -65,6 +65,9 @@ export default {
       }
       reader.readAsDataURL(files[0])
     },
+    resetNewArticle() {
+      this.$store.dispatch('resetNewArticle')
+    }
   }
 }
 </script>
