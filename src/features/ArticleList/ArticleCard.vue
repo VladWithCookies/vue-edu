@@ -14,7 +14,7 @@
       <router-link :to="{ name: 'articles', params: { id: article.id } }" class='header'>
         {{article.title}}
       </router-link>
-      <div class='meta'>{{article.content}}</div>
+      <div class='description'>{{articleDescription}}</div>
     </div>
     <div class='extra content'>
       <span class='left floated'>
@@ -34,6 +34,7 @@
 
 <script>
   import moment from 'moment'
+  import { truncate } from 'lodash'
 
   export default {
     props: ['article', 'deleteArticle'],
@@ -43,6 +44,9 @@
       },
       commentsCount () {
         return this.article.comments.length
+      },
+      articleDescription () {
+        return truncate(this.article.content, { length: 400 })
       }
     }
   }

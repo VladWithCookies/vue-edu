@@ -16,6 +16,7 @@ export default {
 <style>
 * {
   border-radius: 0 !important;
+  word-wrap: break-word;
 }
 .mb-20 {
   margin-bottom: 20px;
