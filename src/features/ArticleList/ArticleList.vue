@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <article-layout>
-      <article-card
-        :key='article.id'
-        :article='article'
-        :deleteArticle='deleteArticle'
-        v-for='article in articles'
-      />
-    </article-layout>
+  <article-layout>
+    <article-card
+      :key='article.id'
+      :article='article'
+      :deleteArticle='deleteArticle'
+      v-for='article in articles'
+    />
     <empty-list v-if='showEmptyList' />
-  </div>
+  </article-layout>
 </template>
 
 <script>

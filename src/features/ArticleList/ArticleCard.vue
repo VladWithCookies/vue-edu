@@ -8,7 +8,7 @@
       </div>
     </div>
     <router-link :to="{ name: 'articles', params: { id: article.id } }" class='fluid image'>
-      <img :src='article.imageSrc' />
+      <img :src='article.imageSrc' v-if='article.imageSrc' />
     </router-link>
     <div class='content'>
       <router-link :to="{ name: 'articles', params: { id: article.id } }" class='header'>
