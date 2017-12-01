@@ -26,6 +26,9 @@ export default {
 .ml-10 {
   margin-left: 10px;
 }
+.mt-60 {
+  margin-top: 60px;
+}
 .cursor-pointer {
   cursor: pointer;
 }

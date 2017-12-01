@@ -23,7 +23,7 @@
       </span>
       <span class='ml-10'>
         <i class='comment icon'></i>
-        42
+        {{commentsCount}}
       </span>
       <span @click='deleteArticle(article)' class='right floated cursor-pointer'>
         <i class='trash icon'></i>
@@ -40,6 +40,9 @@
     computed: {
       timeSinceCreation () {
         return moment(this.article.date).fromNow()
+      },
+      commentsCount () {
+        return this.article.comments.length
       }
     }
   }

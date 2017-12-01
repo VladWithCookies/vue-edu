@@ -1,5 +1,5 @@
 <template>
-  <div class='navbar mb-60'>
+  <div class='navbar mb-60 mt-60'>
     <router-link to='/'>Home</router-link>
     <router-link to='/editor'>Editor</router-link>
   </div>

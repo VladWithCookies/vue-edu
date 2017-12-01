@@ -1,7 +1,9 @@
 <template>
   <div class='article-layout'>
-    <navbar />
-    <slot />
+    <div class='content'>
+      <navbar />
+      <slot />
+    </div>
     <main-footer />
   </div>
 </template>
@@ -21,6 +23,12 @@ export default {
 
 <style>
 .article-layout {
-  margin: 5% 20% 0 20%;
+  margin: 0% 20%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
 }
 </style>

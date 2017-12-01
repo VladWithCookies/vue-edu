@@ -8,7 +8,7 @@
       <div class='ui grid'>
         <statistic label='Views' :value='368' />
         <statistic label='Likes' :value='42' />
-        <statistic label='Comments' :value='5' />
+        <statistic label='Comments' :value='commentCount' />
       </div>
       <div class='ui divider' />
       <div class='ui header'>{{article.title}}</div>
@@ -34,7 +34,12 @@ import Statistic from './Statistic'
 import Comment from './Comment'
 
 export default {
-  computed: mapGetters(['article']),
+  computed: {
+    ...mapGetters(['article']),
+    commentCount () {
+      return this.article.comments.length
+    }
+  },
   components: {
     ArticleLayout,
     CommentForm,
