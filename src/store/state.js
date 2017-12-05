@@ -4,19 +4,19 @@ export default {
     author: 'Author Name',
     content: '',
     imageSrc: '',
-    comments: [],
+    comments: []
   },
   newComment: {
     content: '',
-    author: 'Author Name',
+    author: 'Author Name'
   },
-  articles:  [
+  articles: [
     {
       id: '1',
       title: 'test',
       author: 'Vlad V',
       content: 'test',
-      comments: [],
+      comments: []
     }
   ]
 }

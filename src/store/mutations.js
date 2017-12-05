@@ -1,28 +1,27 @@
-import state from './state'
 import moment from 'moment'
 
 export default {
-  createArticle(state, newArticle) {
+  createArticle (state, newArticle) {
     state.newArticle = {
       date: '',
       title: '',
       author: 'Author Name',
       content: '',
       imageSrc: '',
-      comments: [],
+      comments: []
     }
     state.articles.push({
       ...newArticle,
       date: moment(),
-      id: `${state.articles.length + 1}`,
+      id: `${state.articles.length + 1}`
     })
   },
   createComment (state, { newComment, article }) {
     state.newComment = {
       content: '',
-      author: 'Author Name',
+      author: 'Author Name'
     }
-    article.comments.push({ ...newComment, date: moment() }) //FIXME: temp solution
+    article.comments.push({ ...newComment, date: moment() }) // FIXME: temp solution
   },
   resetNewArticle (state) {
     state.newArticle = {
@@ -31,7 +30,7 @@ export default {
       author: 'Author Name',
       content: '',
       imageSrc: '',
-      comments: [],
+      comments: []
     }
   },
   deleteArticle (state, article) {
