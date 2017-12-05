@@ -45,21 +45,21 @@ const Demo = () => {
     <span onClick={sayHi}>Say hi!</span>
   )
 }
-  
+
 export default Demo
 ```
 
 ### 3. Focus on view layer
-Vue and React core libraries focused on view layer. Other tasks like routing and global state management are handled by companion libraries such as react-router, redux for React and vue-router, vuex for Vue. Also it is easy to integrate Vue or React with other libraries or existing projects. That's why Vue and React is more flexible than Angular. 
+Vue and React core libraries focused on view layer. Other tasks like routing and global state management are handled by companion libraries such as react-router, redux for React and vue-router, vuex for Vue. Also it is easy to integrate Vue or React with other libraries or existing projects. That's why Vue and React is more flexible than Angular.
 
 ## From Angular Vue takes:
-	
+
 1. Directives syntax
 2. Two way data binding
 3. Filters
 
 ### 1. Directives syntax:
-Directive is a specail markup attribute provided by library that talks to do something with the DOM element. Vue directives was inspired by Angular dirictives and has similar syntax. For example Vue directive ```v-model``` that provide two way data binding between form element and some variable looks like Angular ```ng-model``` which do the same. 
+Directive is a specail markup attribute provided by library that talks to do something with the DOM element. Vue directives was inspired by Angular dirictives and has similar syntax. For example Vue directive ```v-model``` that provide two way data binding between form element and some variable looks like Angular ```ng-model``` which do the same.
 
 ### 2. Two way data binding
 One of the core features of Vue and Angular is it’s reactive data binding system. In simple terms: it keeps your data in sync with your DOM without you having to do anything. We can do this with ```v-model``` directive (```ng-model``` in Angular).

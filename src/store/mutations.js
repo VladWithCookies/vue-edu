@@ -24,6 +24,12 @@ export default {
     }
     article.comments.push({ ...newComment, date: moment() }) //FIXME: temp solution
   },
+  resetNewComment (state) {
+    state.newComment = {
+      content: '',
+      author: 'Author Name',
+    }
+  },
   resetNewArticle (state) {
     state.newArticle = {
       date: '',
