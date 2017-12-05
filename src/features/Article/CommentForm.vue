@@ -10,7 +10,10 @@
     <button @click='createComment' class='ui inverted purple button'>
       Submit
     </button>
-    <button class='ui secondary button'>Cancel</button>
+
+    <button @click='resetNewComment' class='ui secondary button'>
+      Cancel
+    </button>
   </div>
 </template>
 
@@ -27,6 +30,9 @@ export default {
       if (!newComment.content) return
 
       this.$store.dispatch('createComment')
+    },
+    resetNewComment () {
+      this.$store.dispatch('resetNewComment')
     }
   }
 }

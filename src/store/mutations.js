@@ -24,6 +24,12 @@ export default {
     }
     article.comments.push({ ...newComment, date: moment() }) //FIXME: temp solution
   },
+  resetNewComment (state) {
+    state.newComment = {
+      content: '',
+      author: 'Author Name',
+    }
+  },
   deleteArticle (state, article) {
     const index = state.articles.indexOf(article)
     state.articles.splice(index, 1)
