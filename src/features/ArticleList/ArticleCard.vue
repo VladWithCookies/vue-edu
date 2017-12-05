@@ -8,13 +8,13 @@
       </div>
     </div>
     <router-link :to="{ name: 'articles', params: { id: article.id } }" class='fluid image'>
-      <img :src='article.imageSrc' />
+      <img :src='article.imageSrc' v-if='article.imageSrc' />
     </router-link>
     <div class='content'>
       <router-link :to="{ name: 'articles', params: { id: article.id } }" class='header'>
         {{article.title}}
       </router-link>
-      <div class='meta'>{{article.content}}</div>
+      <div class='description'>{{articleDescription}}</div>
     </div>
     <div class='extra content'>
       <span class='left floated'>
@@ -23,7 +23,7 @@
       </span>
       <span class='ml-10'>
         <i class='comment icon'></i>
-        42
+        {{commentsCount}}
       </span>
       <span @click='deleteArticle(article)' class='right floated cursor-pointer'>
         <i class='trash icon'></i>
@@ -34,12 +34,19 @@
 
 <script>
   import moment from 'moment'
+  import { truncate } from 'lodash'
 
   export default {
     props: ['article', 'deleteArticle'],
     computed: {
       timeSinceCreation () {
         return moment(this.article.date).fromNow()
+      },
+      commentsCount () {
+        return this.article.comments.length
+      },
+      articleDescription () {
+        return truncate(this.article.content, { length: 400 })
       }
     }
   }

@@ -30,6 +30,16 @@ export default {
       author: 'Author Name',
     }
   },
+  resetNewArticle (state) {
+    state.newArticle = {
+      date: '',
+      title: '',
+      author: 'Author Name',
+      content: '',
+      imageSrc: '',
+      comments: [],
+    }
+  },
   deleteArticle (state, article) {
     const index = state.articles.indexOf(article)
     state.articles.splice(index, 1)

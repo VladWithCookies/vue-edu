@@ -9,6 +9,10 @@ export default {
   resetNewComment ({ commit }) {
     commit('resetNewComment')
   },
+
+  resetNewArticle ({ commit }) {
+    commit('resetNewArticle')
+  },
   deleteArticle ({ commit }, article) {
     commit('deleteArticle', article)
   }
