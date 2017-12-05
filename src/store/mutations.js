@@ -26,7 +26,7 @@ export default {
   resetNewComment (state) {
     state.newComment = {
       content: '',
-      author: 'Author Name',
+      author: 'Author Name'
     }
   },
   resetNewArticle (state) {
