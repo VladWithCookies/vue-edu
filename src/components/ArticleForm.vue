@@ -50,3 +50,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.file-input {
+  margin: 10px 0;
+}
+</style>

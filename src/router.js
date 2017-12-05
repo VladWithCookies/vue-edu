@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ArticleList from 'features/ArticleList/ArticleList'
-import ArticleEditor from 'features/ArticleEditor/ArticleEditor'
+import ArticleCreate from 'features/ArticleEditor/ArticleCreate'
+import ArticleUpdate from 'features/ArticleEditor/ArticleUpdate'
 import Article from 'features/Article/Article'
 
 Vue.use(VueRouter)
@@ -14,12 +15,17 @@ export default new VueRouter({
     },
     {
       path: '/editor',
-      component: ArticleEditor
+      component: ArticleCreate
     },
     {
       path: '/articles/:id',
-      name: 'articles',
+      name: 'article',
       component: Article
+    },
+    {
+      path: '/articles/:id/edit',
+      name: 'articleEdit',
+      component: ArticleUpdate
     }
   ]
 })
