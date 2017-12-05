@@ -7,11 +7,11 @@
         <span class='ml-10 meta'>{{article.author}}</span>
       </div>
     </div>
-    <router-link :to="{ name: 'articles', params: { id: article.id } }" class='fluid image'>
+    <router-link :to="{ name: 'article', params: { id: article.id } }" class='fluid image'>
       <img :src='article.imageSrc' v-if='article.imageSrc' />
     </router-link>
     <div class='content'>
-      <router-link :to="{ name: 'articles', params: { id: article.id } }" class='header'>
+      <router-link :to="{ name: 'article', params: { id: article.id } }" class='header'>
         {{article.title}}
       </router-link>
       <div class='description'>{{articleDescription}}</div>
@@ -22,12 +22,15 @@
         42
       </span>
       <span class='ml-10'>
-        <i class='comment icon'></i>
+        <i class='comment icon' />
         {{commentsCount}}
       </span>
       <span @click='deleteArticle(article)' class='right floated cursor-pointer'>
-        <i class='trash icon'></i>
+        <i class='trash icon' />
       </span>
+      <router-link  :to="{ name: 'articleEdit', params: { id: article.id } }" class='right floated cursor-pointer'>
+        <i class='pencil icon' />
+      </router-link>
     </div>
   </div>
 </template>
