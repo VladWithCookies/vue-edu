@@ -1,4 +1,3 @@
-import state from './state'
 import { find } from 'lodash'
 
 export default {
@@ -8,6 +7,6 @@ export default {
     state.articles,
     ({ id }) => id === state.route.params.id
   ),
-  comments: (state, getters) => getters.article.comments,
-  newComment: (state) => state.newComment,
+  comments: (state, getters) => getters.article && getters.article.comments,
+  newComment: (state) => state.newComment
 }
