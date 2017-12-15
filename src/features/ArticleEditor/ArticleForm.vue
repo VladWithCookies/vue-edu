@@ -2,7 +2,7 @@
   <article-layout class='mb-60'>
     <div class='ui form'>
       <div class='ui fluid image'>
-        <img :src='newArticle.imageSrc' />
+        <img :src='newArticle.imageSrc' v-if='newArticle.imageSrc' />
       </div>
       <div class='file-input'>
         <label for='file' class='ui icon button'>
