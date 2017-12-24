@@ -1,6 +1,64 @@
-# What Vue took from React and Angular?
+# What good did Vue take from from React and Angular?
 
-![kitty](https://trello-attachments.s3.amazonaws.com/59e10a09fa37e1fead5031c2/59f8cbbdeb9de7f85ba07af6/1b60564bc33e672bca8c9bb0414704d4/joxi_screenshot_1509526926848.png)
+## What Vue takes both from Angular and React:
+1. Component based
+2. Animation
+3. Server side rendering
+4. Native rendering
+
+### 1. Component based
+Components are one of the most powerful features of modern Javascript frameworks. Components help extend basic HTML elements to encapsulate reusable code. At a high level, components are custom elements. Compiler attaches some defined behavior to components. Vue, React and Angular are component based. 
+
+### 2. Animation
+Animation is not wide used feature of modern js frameworks, but in some cases it can simplify our life. Angular and Vue have built in solution for animation. 
+Vue provides:  
+- ```transition``` wrapper component that allow us to add entering/leaving transitions for any element or component. 
+```html
+<div id="demo">
+  <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="fade">
+    <p v-if="show">hello</p>
+  </transition>
+</div>
+```
+
+```js
+new Vue({
+  el: '#demo',
+  data: {
+    show: true
+  }
+})
+```
+
+```css
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}
+```
+- ability to create state transitions with watchers to animate data itself. Such as numbers and calculations, colors, positions of SVG nodes, sizes and other properties of elements.Vue allow us to animate these state changes using 3rd-party libraries to tween state, in combination with Vue’s reactivity and component systems.
+
+In Angular this feature provided by ```ngAnimate``` module. Animations in AngularJS are completely based on CSS classes. As long as you have a CSS class attached to a HTML element within your application, you can apply animations to it.
+
+React has addon for animation (```ReactCSSTransitionGroup```) inspared by ```ngAnimate```.
+### 3. Server side rendering
+By default, components produce and manipulate DOM in the browser as output. However, it is also possible to render the same components into HTML strings on the server, send them directly to the browser, and finally "hydrate" the static markup into a fully interactive app on the client.
+
+A server-rendered app can also be considered "isomorphic" or "universal", in the sense that the majority of your app's code runs on both the server and the client. Vue, React and Angular have solutions for server side rendering:
+- Nuxt.js for Vue
+- Angular Universal for Angular 2
+- ```ReactDOMServer``` object Next.js framework in React
+
+### 4. Native rendering
+Native rendering lets you build mobile apps using only JavaScript. And let you compose a rich mobile UI from declarative components. Vue, React and Angular have solutions for native rendering. For example:
+- React native for React
+- Ionic, NativeScript for Angular
+- Weex for Vue
 
 ## From React Vue takes:
 
