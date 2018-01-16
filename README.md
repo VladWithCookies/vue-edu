@@ -1,5 +1,15 @@
 # What good did Vue take from from React and Angular?
 
+## Usefull links
+1. Vue docs: https://vuejs.org/v2/guide/
+2. Vuex docs: https://vuex.vuejs.org/en/
+3. Vue router docs: https://router.vuejs.org/ru/
+4. React docs: https://reactjs.org/docs/hello-world.html
+5. Angular docs: https://angular.io/docs
+6. Framework comparison article: https://medium.com/unicorn-supplies/angular-vs-react-vs-vue-a-2017-comparison-c5c52d620176
+7. Framework comparison article: https://www.valuecoders.com/blog/technology-and-apps/vue-js-comparison-angular-react/
+8. Framework comparison by Vue dev team: https://vuejs.org/v2/guide/comparison.html
+
 ## What Vue takes both from Angular and React:
 1. Component based
 2. Animation
